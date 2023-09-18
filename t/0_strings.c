@@ -28,8 +28,6 @@ int main(void)
 	len2 = _printf("Hello %s ... ", NULL);
 	printf(" => %d\n", len2);
 	printf("Correct: %d\n\n", len1 == len2);
-
-<<<<<<< HEAD
 	len1 = printf("Hello %s ... ", NULL);
 	printf(" => %d\n", len1);
 	len2 = _printf("Hello %s ... ", NULL);
@@ -157,7 +155,7 @@ int main(void)
 	printf("Correct: %d\n\n", len1 == len2);
 
 
-int len;
+	int len;
 
 	printf("-------CHAR CASE percent y n ------\n");
   len = _printf("h_ %% %% jnd%    jjjh hhh\n");
@@ -194,7 +192,6 @@ printf("-------CHAR CASE percent y n ------\n");
   len2 = printf("Let's try to printf a simple sentence.\n");
 
 	return (0);
-=======
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
 	len = _printf("Percent:[%%]\n");
@@ -209,5 +206,5 @@ printf("-------CHAR CASE percent y n ------\n");
 	_printf("%-%\n"); /* { dg-warning "format" "bogus %%" } */
 	_printf("%5%\n"); /* { dg-warning "format" "bogus %%" } */
 	_printf("%h%\n"); /* { dg-warning "format" "bogus %%" } */
->>>>>>> fe48daa476bb4b7371db2ceba7219d5e405af11d
+
 }
