@@ -24,7 +24,7 @@ int unprint(va_list arguments, char *buf, unsigned int inde_buf)
 			inde_buf = han_buff(buf, 'x', inde_buf);
 			op = str[i];
 			binary = binary_arr(binary, op, 0, 32);
-			hexa = hexa_arrs(binary, hexa, 1, 8);
+			hexa = hexa_arr(binary, hexa, 1, 8);
 			inde_buf = han_buff(buf, hexa[6], inde_buf);
 			inde_buf = han_buff(buf, hexa[7], inde_buf);
 			sum += 3;
