@@ -4,20 +4,20 @@
  * print_int - prints an integer
  * @arguments: input string
  * @buf: buffer pointer
- * @ibuf: index for buffer pointer
+ * @inde_buf: index for buffer pointer
  * Return: number of chars printed.
  */
-int print_int(va_list arguments, char *buf, unsigned int ibuf)
+int print_int(va_list arguments, char *buf, unsigned int inde_buf)
 {
 	int int_input;
-	unsigned int int_in, int_temp, i, div, isneg;
+	unsigned int int_number, int_temp, i, div, isneg;
 
 	int_input = va_arg(arguments, int);
 	isneg = 0;
 	if (int_input < 0)
 	{
 		int_in = int_input * -1;
-		ibuf = handl_buf(buf, '-', ibuf);
+		inde_buf = han_buff(buf, '-', inde_buf);
 		isneg = 1;
 	}
 	else
@@ -25,7 +25,7 @@ int print_int(va_list arguments, char *buf, unsigned int ibuf)
 		int_in = int_input;
 	}
 
-	int_temp = int_in;
+	int_temp = int_number;
 	div = 1;
 
 	while (int_temp > 9)
@@ -36,7 +36,7 @@ int print_int(va_list arguments, char *buf, unsigned int ibuf)
 
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
+		inde_buf = han_buff(buf, ((int_in / div) % 10) + '0', inde_buf);
 	}
 	return (i + isneg);
 }

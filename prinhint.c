@@ -1,30 +1,30 @@
 #include "main.h"
 
 /**
- * prinhint - prints a short integer
- * @arguments: input string
- * @buf: buffer pointer
- * @ibuf: index for buffer pointer
+ * prinhint - short integer
+ * @arguments: input
+ * @buf: buffer
+ * @inde_buf: for buffer pointer
  * Return: number of chars printed.
  */
-int prinhint(va_list arguments, char *buf, unsigned int ibuf)
+int prinhint(va_list arguments, char *buf, unsigned int inde_buf)
 {
 	short int int_input;
-	unsigned short int int_in, int_temp, i, div, isneg;
+	unsigned short int int_number, int_temp, i, div, isneg;
 
 	int_input = va_arg(arguments, int);
 	isneg = 0;
 	if (int_input < 0)
 	{
 		int_in = int_input * -1;
-		ibuf = handl_buf(buf, '-', ibuf);
+		inde_buf = han_buff(buf, '-', inde_buf);
 		isneg = 1;
 	}
 	else
 	{
 		int_in = int_input;
 	}
-	int_temp = int_in;
+	int_temp = int_number;
 	div = 1;
 	while (int_temp > 9)
 	{
@@ -33,7 +33,7 @@ int prinhint(va_list arguments, char *buf, unsigned int ibuf)
 	}
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
+		inde_buf = han_buff(buf, ((int_in / div) % 10) + '0', inde_buf);
 	}
 	return (i + isneg);
 }

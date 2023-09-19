@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * fill_oct_array - writes the character c to stdout
+ * oct_arr - fill oct array
  *
- * @bnr: array where is stored the binary.
- * @oct: array where is stored the octal.
+ * @bnr: binary.
+ * @oct: octal.
  *
  * Return: binary array.
  */
-char *fill_oct_array(char *bnr, char *oct)
+char *oct_arr(char *bnr, char *oct)
 {
 	int op, i, j, ioct, limit;
 

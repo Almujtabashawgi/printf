@@ -1,20 +1,19 @@
 #include "main.h"
 /**
- * get_print_func - selects the correct function to perform the operation.
- * @s: argument indentifier
+ * get_print_func - handle the functions used
  * @index: index for argument indentifier
  * Return: pointer to a function.
  */
 int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int)
 {
 	print_t pr[] = {
-		{"c", print_chr}, {"s", print_str},
+		{"c", prin_ch}, {"s", print_str},
 		{"i", print_int}, {"d", print_int},
 		{"b", print_bnr}, {"u", print_unt},
 		{"o", print_oct}, {"x", print_hex},
-		{"X", print_upx}, {"S", print_usr},
-		{"p", print_add}, {"li", prinlint},
-		{"ld", prinlint}, {"lu", prinlunt},
+		{"X", dec_hexa}, {"S", unprint},
+		{"p", print_add}, {"li", print_long},
+		{"ld", print_long}, {"lu", prinlunt},
 		{"lo", prinloct}, {"lx", prinlhex},
 		{"lX", prinlupx}, {"hi", prinhint},
 		{"hd", prinhint}, {"hu", prinhunt},
@@ -25,10 +24,10 @@ int (*get_print_func(const char *s, int index))(va_list, char *, unsigned int)
 		{"#u", print_unt}, {"+i", prinpint},
 		{"+d", prinpint}, {"+u", print_unt},
 		{"+o", print_oct}, {"+x", print_hex},
-		{"+X", print_upx}, {" i", prinsint},
+		{"+X", dec_hexa}, {" i", prinsint},
 		{" d", prinsint}, {" u", print_unt},
 		{" o", print_oct}, {" x", print_hex},
-		{" X", print_upx}, {"R", print_rot},
+		{" X", dec_hexa}, {"R", print_rot},
 		{"r", print_rev}, {"%", print_prg},
 		{"l", print_prg}, {"h", print_prg},
 		{" +i", prinpint}, {" +d", prinpint},

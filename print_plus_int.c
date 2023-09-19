@@ -1,29 +1,29 @@
 #include "main.h"
 
 /**
- * prinpint - print integer with plus symbol
+ * prinpint - print plus symbol
  * @arguments: input string
  * @buf: buffer pointer
- * @ibuf: index for buffer pointer
+ * @inde_buf: index for buffer pointer
  * Return: number of chars printed
  */
-int prinpint(va_list arguments, char *buf, unsigned int ibuf)
+int prinpint(va_list arguments, char *buf, unsigned int inde_buf)
 {
 	int int_input;
-	unsigned int int_in, int_temp, i, div;
+	unsigned int int_number, int_temp, i, div;
 
 	int_input = va_arg(arguments, int);
 	if (int_input < 0)
 	{
 		int_in = int_input * -1;
-		ibuf = handl_buf(buf, '-', ibuf);
+		inde_buf = han_buff(buf, '-', inde_buf);
 	}
 	else
 	{
 		int_in = int_input;
-		ibuf = handl_buf(buf, '+', ibuf);
+		inde_buf = han_buff(buf, '+', inde_buf);
 	}
-	int_temp = int_in;
+	int_temp = int_number;
 	div = 1;
 	while (int_temp > 9)
 	{
@@ -32,7 +32,7 @@ int prinpint(va_list arguments, char *buf, unsigned int ibuf)
 	}
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
+		inde_buf = han_buff(buf, ((int_in / div) % 10) + '0', inde_buf);
 	}
 	return (i + 1);
 }

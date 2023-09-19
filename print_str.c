@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_str - writes the string to stdout
- * @arguments: input string
+ * print_str - print strings
+ * @arguments: input
  * @buf: buffer pointer
- * @ibuf: index for buffer pointer
- * Return: On success 1.
+ * @inde_buf: index for buffer pointer
+ * Return: 1.
  */
-int print_str(va_list arguments, char *buf, unsigned int ibuf)
+int print_str(va_list arguments, char *buf, unsigned int inde_buf)
 {
 	char *str;
 	unsigned int i;
@@ -17,10 +17,10 @@ int print_str(va_list arguments, char *buf, unsigned int ibuf)
 	if (str == NULL)
 	{
 		for (i = 0; nill[i]; i++)
-			ibuf = handl_buf(buf, nill[i], ibuf);
+			inde_buf = han_buff(buf, nill[i], inde_buf);
 		return (6);
 	}
 	for (i = 0; str[i]; i++)
-		ibuf = handl_buf(buf, str[i], ibuf);
+		inde_buf = han_buff(buf, str[i], inde_buf);
 	return (i);
 }

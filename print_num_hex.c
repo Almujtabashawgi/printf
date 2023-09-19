@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * prinnhex - print number in hex begining with zero
+ * prinnhex -  hexa begining with zero
  * @arguments: input string
  * @buf: buffer pointer
- * @ibuf: index for buffer pointer
+ * @inde_buf: index for buffer pointer
  * Return: number of chars printed
  */
-int prinnhex(va_list arguments, char *buf, unsigned int ibuf)
+int prinnhex(va_list arguments, char *buf, unsigned int inde_buf)
 {
 	int int_input, i, isnegative, count, first_digit;
-	char *hexadecimal, *binary;
+	char *hexa, *binary;
 
 	int_input = va_arg(arguments, int);
 	isnegative = 0;
 	if (int_input == 0)
 	{
-		ibuf = handl_buf(buf, '0', ibuf);
+		inde_buf = han_buff(buf, '0', inde_buf);
 		return (1);
 	}
 	if (int_input < 0)
@@ -24,23 +24,23 @@ int prinnhex(va_list arguments, char *buf, unsigned int ibuf)
 		int_input = (int_input * -1) - 1;
 		isnegative = 1;
 	}
-	ibuf = handl_buf(buf, '0', ibuf);
-	ibuf = handl_buf(buf, 'x', ibuf);
+	inde_buf = han_buff(buf, '0', inde_buf);
+	inde_buf = han_buff(buf, 'x', inde_buf);
 	binary = malloc(sizeof(char) * (32 + 1));
-	binary = fill_binary_array(binary, int_input, isnegative, 32);
-	hexadecimal = malloc(sizeof(char) * (8 + 1));
-	hexadecimal = fill_hex_array(binary, hexadecimal, 0, 8);
-	for (first_digit = i = count = 0; hexadecimal[i]; i++)
+	binary = binary_arr(binary, int_input, isnegative, 32);
+	hexa = malloc(sizeof(char) * (8 + 1));
+	hexa = hexa_arr(binary, hexa, 0, 8);
+	for (first_digit = i = count = 0; hexa[i]; i++)
 	{
-		if (hexadecimal[i] != '0' && first_digit == 0)
+		if (hexa[i] != '0' && first_digit == 0)
 			first_digit = 1;
 		if (first_digit)
 		{
-			ibuf = handl_buf(buf, hexadecimal[i], ibuf);
+			inde_buf = han_buff(buf, hexa[i], inde_buf);
 			count++;
 		}
 	}
 	free(binary);
-	free(hexadecimal);
+	free(hexa);
 	return (count + 2);
 }

@@ -1,20 +1,20 @@
 #include "main.h"
 
 /**
- * handl_buf - concatenates the buffer characters
+ * han_buff - handle the buffer
  * @buf: buffer pointer
  * @c: charcter to concatenate
- * @ibuf: index of buffer pointer
- * Return: index of buffer pointer.
+ * @inde_buf: index of buffer pointer
+ * Return: inde_bufs.
  */
-unsigned int handl_buf(char *buf, char c, unsigned int ibuf)
+unsigned int han_buff(char *buf, char c, unsigned int inde_buf)
 {
-	if (ibuf == 1024)
+	if (inde_buf == 1024)
 	{
-		print_buf(buf, ibuf);
-		ibuf = 0;
+		print_buf(buf, inde_buf);
+		inde_buf = 0;
 	}
-	buf[ibuf] = c;
-	ibuf++;
-	return (ibuf);
+	buf[inde_buf] = c;
+	inde_buf++;
+	return (inde_buf);
 }
