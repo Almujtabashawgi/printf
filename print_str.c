@@ -4,10 +4,10 @@
  * print_str - print strings
  * @arguments: input
  * @buf: buffer pointer
- * @inde_buf: index for buffer pointer
- * Return: 1.
+ * @inbuf: index for buffer pointer
+ * Return: 1 when done.
  */
-int print_str(va_list arguments, char *buf, unsigned int inde_buf)
+int print_str(va_list arguments, char *buf, unsigned int inbuf)
 {
 	char *str;
 	unsigned int i;
@@ -17,10 +17,10 @@ int print_str(va_list arguments, char *buf, unsigned int inde_buf)
 	if (str == NULL)
 	{
 		for (i = 0; nill[i]; i++)
-			inde_buf = han_buff(buf, nill[i], inde_buf);
+			inbuf = han_buff(buf, nill[i], inbuf);
 		return (6);
 	}
 	for (i = 0; str[i]; i++)
-		inde_buf = han_buff(buf, str[i], inde_buf);
+		inbuf = han_buff(buf, str[i], inbuf);
 	return (i);
 }
