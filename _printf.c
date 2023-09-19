@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _printf - our own printf function that format the output as the printf
+ * _printf - formatted output conversion and print data.
  * @format: input string.
  *
  * Return: number of chars printed.
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, len = 0, inde_buf = 0;
+	unsigned int i = 0, len = 0, ibuf = 0;
 	va_list arguments;
 	int (*function)(va_list, char *, unsigned int);
 	char *buffer;
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
-			{	print_buf(buffer, inde_buf), free(buffer), va_end(arguments);
+			{	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
 				return (-1);
 			}
 			else
@@ -32,20 +32,20 @@ int _printf(const char *format, ...)
 				{
 					if (format[i + 1] == ' ' && !format[i + 2])
 						return (-1);
-					han_buff(buffer, format[i], inde_buf), len++, i--;
+					handl_buf(buffer, format[i], ibuf), len++, i--;
 				}
 				else
 				{
-					len += function(arguments, buffer, inde_buf);
-					i += identifiers_func(format, i + 1);
+					len += function(arguments, buffer, ibuf);
+					i += ev_print_func(format, i + 1);
 				}
 			} i++;
 		}
 		else
-			han_buff(buffer, format[i], inde_buf), len++;
-		for (inde_buf = len; inde_buf > 1024; inde_buf -= 1024)
+			handl_buf(buffer, format[i], ibuf), len++;
+		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
 			;
 	}
-	print_buf(buffer, inde_buf), free(buffer), va_end(arguments);
+	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
 	return (len);
 }

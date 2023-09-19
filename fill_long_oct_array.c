@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * long_oct_arr - long octal number
+ * fill_long_oct_array - calculates a long octal number
  *
- * @bnr: array in binary.
- * @oct: array in octal.
+ * @bnr: array where is stored the binary.
+ * @oct: array where is stored the octal.
  *
  * Return: binary array.
  */
-char *long_oct_arr(char *bnr, char *oct)
+char *fill_long_oct_array(char *bnr, char *oct)
 {
 	int op, i, j, ioct, limit;
 

@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * fill_short_oct_array - short oct
+ * fill_short_oct_array - calculates a short octal number
  *
- * @bnr:  binary array.
- * @oct: octal array.
+ * @bnr: array where is stored the binary.
+ * @oct: array where is stored the octal.
  *
  * Return: binary array.
  */

@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * print_rot - print the string with ROT13 encrypt
- * @arguments: input
+ * print_rot - writes the str in ROT13
+ * @arguments: input string
  * @buf: buffer pointer
- * @inde_buf: index for buffer pointer
- * Return: chars printed.
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed.
  */
 
-int print_rot(va_list arguments, char *buf, unsigned int inde_buf)
+int print_rot(va_list arguments, char *buf, unsigned int ibuf)
 {
 	char alf[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
@@ -20,7 +20,7 @@ int print_rot(va_list arguments, char *buf, unsigned int inde_buf)
 	if (str == NULL)
 	{
 		for (i = 0; nill[i]; i++)
-			inde_buf = han_buff(buf, nill[i], inde_buf);
+			ibuf = handl_buf(buf, nill[i], ibuf);
 		return (6);
 	}
 	for (i = 0; str[i]; i++)
@@ -30,12 +30,12 @@ int print_rot(va_list arguments, char *buf, unsigned int inde_buf)
 			if (str[i] == alf[j])
 			{
 				k = 1;
-				inde_buf = han_buff(buf, rot[j], inde_buf);
+				ibuf = handl_buf(buf, rot[j], ibuf);
 				break;
 			}
 		}
 		if (k == 0)
-			inde_buf = han_buff(buf, str[i], inde_buf);
+			ibuf = handl_buf(buf, str[i], ibuf);
 	}
 	return (i);
 }

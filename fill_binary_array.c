@@ -1,29 +1,29 @@
 #include "main.h"
 
 /**
- * binary_arr - decimal to binary
- * @binary: binary pointer
- * @int_number: number
+ * fill_binary_array - prints decimal in binary
+ * @binary: pointer to binary
+ * @int_in: input number
  * @isneg: if input number is negative
  * @limit: size of the binary
  * Return: number of chars printed.
  */
-char *binary_arr(char *binary, long int int_number, int isneg, int limit)
+char *fill_binary_array(char *binary, long int int_in, int isneg, int limit)
 {
 	int i;
 
 	for (i = 0; i < limit; i++)
 		binary[i] = '0';
 	binary[limit] = '\0';
-	for (i = limit - 1; int_number > 1; i--)
+	for (i = limit - 1; int_in > 1; i--)
 	{
-		if (int_number == 2)
+		if (int_in == 2)
 			binary[i] = '0';
 		else
-			binary[i] = (int_number % 2) + '0';
-		int_number /= 2;
+			binary[i] = (int_in % 2) + '0';
+		int_in /= 2;
 	}
-	if (int_number != 0)
+	if (int_in != 0)
 		binary[i] = '1';
 	if (isneg)
 	{

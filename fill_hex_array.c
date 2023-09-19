@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * hexa_arr - hexa array
+ * fill_hex_array - writes the character c to stdout
  *
- * @bnr: binary.
- * @hex: hexa.
- * @isupp: uppercase or lowercase letter.
- * @limit: size of hexa
+ * @bnr: array where is stored the binary.
+ * @hex: array where is stored the hexadecimal.
+ * @isupp: integer that determines if the hexadecimal array is
+ * in uppercase or lowercase letter.
+ * @limit: size of hex
  * Return: binary array.
  */
-char *hexa_arr(char *bnr, char *hex, int isupp, int limit)
+char *fill_hex_array(char *bnr, char *hex, int isupp, int limit)
 {
 	int op, i, j, toletter;
 

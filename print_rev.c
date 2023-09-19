@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_rev - reverse the string
+ * print_rev - writes the str in reverse
  * @arguments: input string
  * @buf: buffer pointer
- * @inde_buf: index for buffer pointer
+ * @ibuf: index for buffer pointer
  * Return: number of chars printed.
  */
-int print_rev(va_list arguments, char *buf, unsigned int inde_buf)
+int print_rev(va_list arguments, char *buf, unsigned int ibuf)
 {
 	char *str;
 	unsigned int i;
@@ -18,7 +18,7 @@ int print_rev(va_list arguments, char *buf, unsigned int inde_buf)
 	if (str == NULL)
 	{
 		for (i = 0; nill[i]; i++)
-			inde_buf = han_buff(buf, nill[i], inde_buf);
+			ibuf = handl_buf(buf, nill[i], ibuf);
 		return (6);
 	}
 	for (i = 0; str[i]; i++)
@@ -26,7 +26,7 @@ int print_rev(va_list arguments, char *buf, unsigned int inde_buf)
 	j = i - 1;
 	for (; j >= 0; j--)
 	{
-		inde_buf = han_buff(buf, str[j], inde_buf);
+		ibuf = handl_buf(buf, str[j], ibuf);
 	}
 	return (i);
 }

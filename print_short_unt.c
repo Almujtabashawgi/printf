@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * prinhunt - short unsigned integer to print
- * @arguments: number
- * @buf: buffer
- * @inde_buf: index
- * Return: number of chars
+ * prinhunt - prints a short unsigned integer
+ * @arguments: number to print
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed.
  */
-int prinhunt(va_list arguments, char *buf, unsigned int inde_buf)
+int prinhunt(va_list arguments, char *buf, unsigned int ibuf)
 {
-	unsigned short int int_number, int_temp, i, div;
+	unsigned short int int_in, int_temp, i, div;
 
-	int_number = va_arg(arguments, unsigned int);
+	int_in = va_arg(arguments, unsigned int);
 
-	int_temp = int_number;
+	int_temp = int_in;
 	div = 1;
 
 	while (int_temp > 9)
@@ -24,7 +24,7 @@ int prinhunt(va_list arguments, char *buf, unsigned int inde_buf)
 
 	for (i = 0; div > 0; div /= 10, i++)
 	{
-		inde_buf = han_buff(buf, ((int_number / div) % 10) + '0', inde_buf);
+		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
 	}
 	return (i);
 }
